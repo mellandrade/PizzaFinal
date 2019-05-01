@@ -24,7 +24,40 @@
         <p><a class="btn btn-lg btn-success" href="#" role="button">Order now!</a></p>
       </div>
 
-      <div class="row marketing">
+      <div class="row content">
+        <div class="col-lg-6">
+         <form action="" method="post">
+             <label>Name</label><input type="text" name="name" id="name">
+             <br>
+             <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Address Type
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">House/Residential</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Apartment</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Business</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Campus</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Hotel</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Dorm</a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Other</a></li>
+                </ul>
+              </div>
+             <label>Address Type - dropdown menu JS</label>
+             <br>
+             <label>Street Address</label><input type="text" name="address" id="address">
+             <br>
+             <label>Apt#/Suite#/Room#</label><input type="text" name="apt" id="id">
+             <br>
+             <label>City</label><input type="text" name="city" id="id"> &nbsp; <label>State</label><input type="text" name="state" id="state"> &nbsp; <label>Zip Code</label><input type="number" name="zip" id="zip">
+             <br>
+             <label>Phone Number</label><input type="number" name="phone" id="phone">
+             <br>
+             <label>Email</label><input type="email" name="email" id="email">
+         </form>
+        </div>
+
+       
+    <!-- Extra column    
         <div class="col-lg-6">
           <h4>Subheading</h4>
           <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
@@ -35,20 +68,11 @@
           <h4>Subheading</h4>
           <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
         </div>
-
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
+        -->
       </div>
 
       <footer class="footer">
+       <br>
         <p>&copy; 2019 Pizza By Mell</p>
       </footer>
 
