@@ -1,0 +1,20 @@
+body {
+    background-image: url(../images/pizza-bg.png);
+}
+.content {
+    background: aliceblue;
+}
+.img-fluid {
+    width: 150px;
+    height: 150px;
+    float: left;
+    margin-right: 20px;
+    margin-top: 0;
+}
+.jumbotron {
+    background-color: aliceblue!important;
+
+}
+label {
+    margin: 10px;
+}
