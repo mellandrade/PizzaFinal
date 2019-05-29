@@ -59,3 +59,12 @@ label {
 .dropdown a:hover {background-color: #ddd;}
 
 .show {display: block;}
+
+/* Rest of the Form */
+.dropbtn {
+    background-color: darkgoldenrod!important;
+}
+
+#submit {
+    background-color: darkgoldenrod!important;
+}
