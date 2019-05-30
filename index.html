@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Get Ya Pizza - Order Here</title>
+    <title>Pizza World | Pizza Delivery &amp; Pick-up</title>
 
 <!--CSS-->   
     <link href="styles/normalize.css" type="text/css"  rel="stylesheet">
     <link href="styles/styles.css" type="text/css" rel="stylesheet">  
+<!--Font-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Source+Sans+Pro&display=swap" rel="stylesheet">
 <!--Font Awesone-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">     
 <!--Bootstrap-->    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -17,27 +19,94 @@
     
 </head>
 <body>
-    
      <div class="container">
       <div class="header clearfix"></div>
-
-      <div class="jumbotron bg-transparent">
-        <img src="images/pizzaworld_logo.png" class="img-fluid" alt="Responsive image">
-        <h1>Pizza World</h1>
-          <p class="lead"><strong>Hungry? Get your pizza in less than 30 minutes or it's free.</strong></p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Order now!</a></p>
+      <br>
+       <div class="jumbotron jumbotron-fluid">
+       <img src="images/pizzaworld_logo.png" id="logo" class="img-fluid" alt="Responsive image">
+         <h1 class="display-4">Pizza World</h1>
+         <p class="lead intro"><strong>Pizza makes the world go around. Order yours today!</strong></p>
+        </div>
+      
+<!-- PART 1 DELIVERY & ORDER FORM -->
+    <div class="container"> 
+     <div class="py-3 text-center">
+     <h2>Order My Pizza</h2>
+     <p class="lead">Fill out the information below.</p>
       </div>
-<!-- PART 1 DELIVERY LOCATION FORM -->
-      <div class="row content">
-        <div class="col-lg-10">
-         <form action="" method="post">
-             <label>First Name</label><input type="text" name="name" id="name">
-             <label>Last Name</label><input type="text" name="name" id="name">
+
+<!-- SIDE CART - USE FOR TALLYING?
+  <div class="row">
+    <div class="col-md-4 order-md-2 mb-4">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-muted">Your cart</span>
+        <span class="badge badge-secondary badge-pill">3</span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Product name</h6>
+            <small class="text-muted">Brief description</small>
+          </div>
+          <span class="text-muted">$12</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Second product</h6>
+            <small class="text-muted">Brief description</small>
+          </div>
+          <span class="text-muted">$8</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Third item</h6>
+            <small class="text-muted">Brief description</small>
+          </div>
+          <span class="text-muted">$5</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between bg-light">
+          <div class="text-success">
+            <h6 class="my-0">Promo code</h6>
+            <small>EXAMPLECODE</small>
+          </div>
+          <span class="text-success">-$5</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total (USD)</span>
+          <strong>$20</strong>
+        </li>
+      </ul>
+
+      <form class="card p-2">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Promo code">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-secondary">Redeem</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    -->
+<!-- FORM -->
+        <div class="col-md-12 order-md-1">
+         <form action="" method="post" class="needs-validation" novalidate>
+            
+            <div class="row content">
+             <div class="col-md-6 mb-3">
+             <label for="firstName">First Name</label><input type="text" class="form-control" name="name" id="firstName" placeholder="" value="">
+             </div>
+             <div class="col-md-6 mb-3">
+             <label for="lastName">Last Name</label><input type="text" class="form-control" name="name" id="lastName" placeholder="" value="">
+             </div>
+             </div>
+             
+             <div class="mb-3">
+             <label for="address">Address Type</label>
              <br>
              <div class="dropdown">
                 <button onclick="myFunction()" class="btn btn-primary dropdown-toggle dropbtn" type="button" id="address" data-toggle="dropdown">Address Type</button>
                 <div id="myDropdown" class="dropdown-content">
-                    <option value="house">House/Residential</option>
+                    <option value="house">House</option>
                     <option value="apartment">Apartment</option>
                     <option value="business">Business</option>
                     <option value="campus">Campus</option>
@@ -45,111 +114,234 @@
                     <option value="other">Other</option>
                     <section id="textbox"></section>
                 </div>
-            </div>   
-             <label>Address Type - dropdown menu JS</label>
-             <br>
-             <label>Street Address</label><input type="text" name="address" id="address">
-             <br>
-             <label>Apt/Suite/Room <em>(optional)</em></label><input type="text" name="apt" id="id">
-             <br>
-             <label>City</label><input type="text" name="city" id="id"> &nbsp; <label>State</label><input type="text" name="state" id="state"> &nbsp; <label>Zip Code</label><input type="number" name="zip" id="zip">
-             <br>
-             <label>Phone Number</label><input type="number" name="phone" id="phone">
-             <label>Email</label><input type="email" name="email" id="email">
-         </form>
+             </div>  
+             </div>
+            
+            <div class="row">
+            <div class="col-md-6 mb-3"> 
+             <label for="street">Street Address</label>
+             <input type="text" class="form-control" name="street" id="street" placeholder="1234 Main St" value="">
+            </div>
+            <div class="col-md-6 mb-3"> 
+             <label for="apt">Apt/Suite/Room <span class="text-muted">(optional)</span></label>
+             <input type="text" class="form-control" name="apt" id="apt" placeholder="Apt #3" value="">
+            </div>
+            </div>  
+             
+             <div class="row">
+             <div class="col-md-5 mb-3">
+             <label for="city">City</label>
+             <input type="text" class="form-control" name="city" id="city" placeholder="La Jolla" value="">
+             </div>
+             <div class="col-md-4 mb-3">
+             <label for="state">State</label>
+             <input type="text" class="form-control" name="state" id="state" placeholder="California" value="">
+             </div>
+             <div class="col-md-3 mb-3">
+             <label for="zip">Zip Code</label>
+             <input type="text" class="form-control" name="zip" id="zip" placeholder="92107" value="">
+             </div>
+             </div>
+             
+             <div class="row">
+             <div class="col-md-6 mb-3">
+             <label for="phone">Phone Number</label>
+             <input type="text" class="form-control" name="phone" id="phone" placeholder="555-555-5555">
+             </div>
+             <div class="col-md-6 mb-3">
+             <label for="email">Email</label>
+             <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com">
+             </div>
+             </div> 
+
+<hr class="mb-4">
+
+<!-- PART 2 BUILD YOUR ORDER FORM -->
+  <h4 class="mb-3">Build My Pizza</h4>
+   <div class="d-block my-2">
+     <p>Select My Dough:</p>
+      <div class="custom-control custom-radio">
+      <input type="radio" name="dough" id="hand-tossed" value="hand-tossed" class="custom-control-input" onclick="return doughSelect();">
+      <label class="custom-control-label" for="hand-tossed">Hand-Tossed</label>
         </div>
-
-   <!-- PART 2 BUILD YOUR ORDER FORM -->
-   <div>
-       <form action="/action_page.php">
-<p>Select Ya Dough:</p>
-  <input type="radio" name="dough" value="hand-tossed"> Hand-Tossed<br>
-  <input type="radio" name="dough" value="thincrust"> Thin Crust<br>
-  <input type="radio" name="dough" value="nycstyle"> New York Style<br>
-  <input type="radio" name="dough" value="glutenfree"> Gluten Free<br>    
-
-<p>Size Matters:</p>
-<button onclick="myFunction()" class="btn btn-primary dropdown-toggle dropbtn" type="button" id="doughsize" data-toggle="dropdown">What Size Do Ya Want?</button>
+      <div class="custom-control custom-radio">
+       <input type="radio" id="thincrust" name="dough" value="thincrust" class="custom-control-input" onclick="return doughSelect();">
+       <label class="custom-control-label" for="thincrust">Thin Crust</label>
+        </div>
+      <div class="custom-control custom-radio"> 
+        <input type="radio" id="nystyle" name="dough" value="nycstyle" class="custom-control-input" onclick="return doughSelect();">
+        <label class="custom-control-label" for="nystyle">New York Style</label>
+       </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" id="glutenfree" name="dough" value="glutenfree" class="custom-control-input" onclick="return doughSelect();">
+        <label class="custom-control-label" for="glutenfree">Gluten Free</label>
+        </div>
+     </div>    
+<br>
+  <div class="col-md-12 order-md-1">
+   <div class="row">
+    <div class="col-md-4 mb-3">
+    <p>Select My Size:</p>
+<button onclick="mySizeFunction()" class="btn btn-primary dropdown-toggle dropbtn" type="button" id="doughsize" data-toggle="dropdown">Choose My Size...</button>
     <div id="myDropdown" class="dropdown-content">
-        <option value="hand">House/Residential</option>
-        <option value="thin">Apartment</option>
-        <option value="nyc">Business</option>
-        <option value="gluten">Campus</option>
+        <option id="htsmall">Hand-Tossed: Small - $9.99</option>
+        <option id="htmed">Hand-Tossed: Medium - $12.99</option>
+        <option id="htlarge">Hand-Tossed: Large - $14.99</option>
+        <option id="thinmed">Thin Crust: Medium - $11.99</option>
+        <option id="thinlarge">Thin Crust: Large - $13.99</option>
+        <option id="nylarge">NY Style: Large - $16.99</option>
+        <option id="nyxlarge">NY Style: Extra Large - $19.99</option>
+        <option id="glutensmall">Gluten Free: Small - $10.99</option>
     </div>
-
-<p>Cheese:</p>
-<button onclick="myFunction()" class="btn btn-primary dropdown-toggle dropbtn" type="button" id="doughsize" data-toggle="dropdown">Cheese Anyone?</button>
-    <div id="myDropdown" class="dropdown-content">
-        <option value="light">Light: No charge</option>
-        <option value="normal" selected>Normal: No charge</option>
-        <option value="extra">Extra: +$2.99</option>
-        <option value="double">Double: +$3.99</option>
-    </div>    
-
-<p>Sauce:</p>
-<button onclick="myFunction()" class="btn btn-primary dropdown-toggle dropbtn" type="button" id="doughsize" data-toggle="dropdown">Sauce It Up</button>
-    <div id="myDropdown" class="dropdown-content">
-        <option value="reg" selected>Regular Tomato: No charge</option>
-        <option value="hearty">Hearty Tomato: +$0.99</option>
-        <option value="bbq">BBQ Sauce: +$1.99</option>
-    </div> 
-    
-<p>Pick Ya Toppings: ($0.99 per topping)</p>
-  <input type="checkbox" name="toppings" value="pep"> Pepperoni<br>
-  <input type="checkbox" name="toppings" value="sausage"> Sausage<br>
-  <input type="checkbox" name="toppings" value="ham"> Ham<br>
-  <input type="checkbox" name="toppings" value="bacon"> Bacon<br>
-  <input type="checkbox" name="toppings" value="salami"> Salami<br>
-  <input type="checkbox" name="toppings" value="peppers"> Peppers<br>
-  <input type="checkbox" name="toppings" value="olives"> Olives<br>
-  <input type="checkbox" name="toppings" value="jalapenos"> Jalapenos<br>
-  <input type="checkbox" name="toppings" value="mushrooms"> Mushrooms<br>
-  <input type="checkbox" name="toppings" value="pineapple"> Pineapple<br>
-  <input type="checkbox" name="toppings" value="onion"> Onion<br>
-
-  <input type="submit" id="submit" value="Order Ma Pizza"><br>
-</form>
    </div>
+
+    <div class="col-md-4 mb-3">
+    <p>Select My Cheese:</p>
+<button onclick="myCheeseFunction()" class="btn btn-primary dropdown-toggle dropbtn" type="button" id="doughsize" data-toggle="dropdown">Choose My Cheese:</button>
+    <div id="myDropdown" class="dropdown-content">
+        <option id="light" value="light">Light: No charge</option>
+        <option id="normal" value="normal" selected>Normal: No charge</option>
+        <option id="extrat" value="extra">Extra: +$2.99</option>
+        <option id="double" value="double">Double: +$3.99</option>
+    </div> 
+    </div>   
+
+    <div class="col-md-4 mb-3">
+    <p>Select My Sauce:</p>
+<button onclick="mySauceFunction()" class="btn btn-primary dropdown-toggle dropbtn" type="button" id="doughsize" data-toggle="dropdown">Choose My Sauce:</button>
+    <div id="myDropdown" class="dropdown-content">
+        <option id="regular">Regular Tomato: No charge</option>
+        <option id="hearty">Hearty Tomato: +$0.99</option>
+        <option id="bbq">BBQ Sauce: +$1.99</option>
+    </div>
+    </div> 
+
+<div class="d-block my-3">
+    <p>Select My Toppings: <em>(Each topping is $0.99 extra.)</em></p>
+    <div class="form-check form-check-inline"> 
+      <input type="checkbox" id="pepperoni" name="toppings" class="form-check-input" value="pepperoni">
+      <label for="pepperoni"> Pepperoni</label>
+      <input id="sausage" type="checkbox" class="form-check-input" name="toppings">
+      <label for="sausage"> Sausage</label>
+      <input id="ham" type="checkbox" class="form-check-input" name="toppings">
+      <label for="ham"> Ham</label>
+      <input id="bacon" type="checkbox" class="form-check-input" name="toppings" value="bacon">
+      <label for="bacon"> Bacon</label><br>
+      <input id="salami" type="checkbox" class="form-check-input" name="toppings" value="salami">
+      <label for="salami"> Salami</label>
+    </div>
+     <div class="form-check form-check-inline">
+      <input id="peppers" type="checkbox" class="form-check-input" name="toppings" value="peppers">
+      <label for="peppers"> Peppers</label>
+      <input id="olives" type="checkbox" class="form-check-input" name="toppings" value="olives">
+      <label for="olives"> Olives</label>
+      <input id="jalapenos" type="checkbox" class="form-check-input" name="toppings" value="jalapenos">
+      <label for="jalapenos"> Jalapenos</label>
+      <input id="mushrooms" type="checkbox" class="form-check-input" name="toppings" value="mushrooms">
+      <label for="mushrooms"> Mushrooms</label>
+      <input id="pineapple"type="checkbox" class="form-check-input" name="toppings" value="pineapple">
+      <label for="pineapple"> Pineapple</label>
+      <input id="onion" type="checkbox" class="form-check-input" name="toppings" value="onion">
+      <label for="onion"> Onion</label>
+    </div>
+       </div>
+   <div class="col text-center">   
+<a class="btn btn-primary btn-md btn-success" href="#" role="button">Submit My Order</a>
+   </div>
+   </div>
+     </form>
    
 <!-- PART 3 BILLING INFORMATION -->
    <div class="billing">
-   <p>Billing Information</p>
-   <input type="checkbox" name="same" value="same"> Same As Delivery Information<br>
+   <h4 class="mb-3">Billing Information</h4>
+   <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="same-address">
+    <label class="custom-control-label" for="same-address">Same As Delivery Information</label>
+   </div>
+   
     <form action="" method="post">
-        <label>First Name</label><input type="text" name="name" id="name">         
-        <label>Last Name</label><input type="text" name="name" id="name">
-         <br>
+       <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="" value="">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="" value="">
+          </div>
+        </div>
+         
+    <div class="mb-3">
+      <label for="address">Address Type</label><br> 
         <div class="dropdown">
         <button onclick="myFunction()" class="btn btn-primary dropdown-toggle dropbtn" type="button" id="address" data-toggle="dropdown">Address Type</button>
         <div id="myDropdown" class="dropdown-content">
-           <option value="house">House/Residential</option>
+           <option value="house">House</option>
            <option value="apartment">Apartment</option>
            <option value="business">Business</option>
            <option value="campus">Campus</option>
            <option value="hotel">Hotel</option>
            <option value="other">Other</option>
-             <section id="textbox"></section>
+           <section id="textbox"></section>
         </div>
-        </div>   
-             <label>Address Type - dropdown menu JS</label><br>
-        <label>Street Address</label><input type="text" name="address" id="address"><br>
-        <label>Apt/Suite/Room <em>(optional)</em></label><input type="text" name="apt" id="id"><br>
-        <label>City</label><input type="text" name="city" id="id"> &nbsp; <label>State</label><input type="text" name="state" id="state"> &nbsp; <label>Zip Code</label><input type="number" name="zip" id="zip">
-       </form>
+        </div>
+    </div>   
+            
+    <div class="row">
+        <div class="col-md-6 mb-3">
+        <label for="street">Street Address</label>
+        <input type="text" class="form-control" id="street" placeholder="1234 Main St" value="">
+        </div>
+        <div class="col-md-6 mb-3">
+        <label for="apt">Apt/Suite/Room <span class="text-muted">(optional)</span></label>
+        <input type="text" class="form-control" id="apt" placeholder="Apt #3" value="">
+        </div>
+    </div>
+       
+    <div class="row">
+        <div class="col-md-5 mb-3"> 
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" placeholder="La Jolla" value="">
+        </div>
+        <div class="col-md-4 mb-3">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state" placeholder="California" value="">
+        </div>
+        <div class="col-md-3 mb-3">
+        <label for="zip">Zip</label>
+        <input type="text" class="form-control" id="zip" placeholder="92107">
+        </div>
+    </div>
+    </form>
    </div>
-   <div class="creditcard">
-   <p>Payment</p>
+    
+<hr class="mb-4">
+        
+    <div class="payment">   
+<h4 class="mb-3">Payment</h4>
     <div class="icon-container">
         <i class="fa fa-cc-visa" style="color:navy;"></i>
         <i class="fa fa-cc-amex" style="color:blue;"></i>
         <i class="fa fa-cc-mastercard" style="color:red;"></i>
         <i class="fa fa-cc-discover" style="color:orange;"></i>
     </div>
-    <label for="cname">Name On Card</label>
-        <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+        <label for="cname">Name On Card</label>
+        <input type="text" class="form-control" id="cname" name="cardname" placeholder="John More Doe">
+        <small class="text-muted">Full Name As Displayed On Card</small>
+        </div>
+        <div class="col-md-6 mb-3">
         <label for="ccnum">Credit Card Number</label>
-        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">           <label for="expdate">Exp Date</label>
-        <select id="expdate" type="text" name="expdate">
+        <input type="text" class="form-control" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+        </div>
+        </div>
+        
+        <div class="row">
+        <div class="col-md-4 mb-3">
+        <label for="expdate">Exp Date</label>
+        <div class="btn-group">
+        <select id="month" type="text" class="form-control w-100" name="month">
             <option>01</option>
             <option>02</option>
             <option>03</option>
@@ -162,8 +354,8 @@
             <option>10</option>
             <option>11</option>
             <option>12</option>
-       </select>    
-       <select>
+       </select>
+       <select id="year" type="text" class="form-control" name="year">
            <option>2019</option>
            <option>2020</option>
            <option>2021</option>
@@ -177,36 +369,29 @@
            <option>2029</option>
            <option>2030</option>
        </select>
-    <div class="row">
-        <div class="col-lg-10">
-
-    <div class="col-lg-10">
-            <label for="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="352">
-   </div>
+            </div>
+            </div>
+       <div class="col-md-5 mb-3">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" class="form-control" name="cvv" placeholder="352">
         </div>
-    <!-- Extra column    
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
-        -->
-      </div>
-
-      <footer class="footer">
-       <br>
-        <p>&copy; 2019 Pizza By Mell</p>
-      </footer>
-
-    </div>
-         </div>
+      </div> 
     </div>
     
+    <div class="row"> 
+       <div class="col text-center">   
+        <button class="btn btn-primary btn-lg" id="sumbit" type="submit">Continue To Checkout</button>
+        </div>
+    </div> 
+           
+  <footer class="my-5 pt-5 text-white text-center text-small">
+    <p class="mb-1">&copy; 2019 Pizza World</p>
+    <p><a href="mailto:info@pizzaworld.com?Subject=Help%20Me With%20My%20Pizza%20Please" id="contact">Contact us</a></p>
+  </footer>
+   
+    </div>
+ </div>          
+</div>
+</div>    
 </body>
 </html>
