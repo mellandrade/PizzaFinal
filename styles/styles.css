@@ -1,8 +1,17 @@
 body {
-    background: #FFF url(../images/pizza-bg1.png);
+    font-family: 'Source Sans Pro', sans-serif;
+    background: url(../images/pizza-bg-mustard.png);
 }
-.content {
-    background: aliceblue;
+.container {
+    color: white;
+    background: #0D0D0D;
+    border: 5px white;
+    border-radius: 8px;
+    opacity: 0.8;
+    margin-top: 20px;
+}
+#logo {
+    margin-left: 10px;
 }
 .img-fluid {
     width: 150px;
@@ -12,13 +21,19 @@ body {
     margin-top: 0;
 }
 .jumbotron {
-    margin: 10px;
- /*   background: rgba(200, 54, 54, 0.5);  play around with opacity */
-
+    font-family: 'Merriweather', serif;
+    color: black;
+    background-color: white!important;
+    border: 5px dashed black;
+    border-radius: 8px;
+}
+.display-4, intro {
+    margin-top: 20px;
 }
 label {
     margin: 10px;
 }
+
 
 /* Address Type Dropdown */
 .dropbtn {
@@ -65,6 +80,14 @@ label {
     background-color: darkgoldenrod!important;
 }
 
-#submit {
+.btn-primary {
     background-color: darkgoldenrod!important;
+    border-color: white!important;
+    margin-bottom: 20px;
+}
+.mb-1 {
+    color: black;
+}
+#contact {
+    color: black;
 }
