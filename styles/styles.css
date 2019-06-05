@@ -65,7 +65,7 @@ label {
 
 /* FORM */
 .dough {
-    margin-left: 0px;
+    margin: 0px 20px 0px 0px;
 }
 #handtossed, #thincrust, #nystyle, #glutenfree {
     margin-right: 5px;
@@ -86,6 +86,7 @@ label {
 
 /* PAYMENT */
 .billing {display: none;}
+
 .fa {
     width: 40px;
     height: 40px;

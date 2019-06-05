@@ -1,4 +1,12 @@
 /*eslint-env browser*/
+function multiFunc() {
+    "use strict";
+    validate();
+    clicked ();
+    finished ();
+    myFunction ();
+    
+}
 
 //PART 1
 
@@ -9,56 +17,6 @@ function showfield(name) {
         document.getElementById("div1").innerHTML = 'Other <input type="text" name="other" placeholder="Explain" />';
     } else { document.getElementById("div1").innerHTML = "";
            }
-}
-
-// VALIDATION
-function validate() {
-    "use strict";
-    if (document.orderForm.firstName.value === "") {
-        window.alert("Please provide your first name.");
-        document.orderForm.firstName.focus();
-        return false;
-    }
-    if (document.orderForm.lastName.value === "") {
-        window.alert("Please provide your last name.");
-        document.orderForm.lastName.focus();
-        return false;
-    }
-    if (document.orderForm.addressType.value === "") {
-        window.alert("Please select an address type.");
-        document.orderForm.addressType.focus();
-        return false;
-    }
-    if (document.orderForm.street.value === "") {
-        window.alert("Please provide a street address.");
-        document.orderForm.street.focus();
-        return false;
-    }
-    if (document.orderForm.city.value === "") {
-        window.alert("Please provide a city.");
-        document.orderForm.city.focus();
-        return false;
-    }
-    if (document.orderForm.state.value === "" || isNaN(document.orderForm.state.value) || document.orderForm.state.value.length !== 2) {
-        window.alert("Please provide a state.");
-        document.orderForm.state.focus();
-        return false;
-    }
-    if (document.orderForm.zip.value === "" || isNaN(document.orderForm.zip.value) || document.orderForm.zip.value.length !== 5) {
-        window.alert("Please provide a zip code.");
-        document.orderForm.zip.focus();
-        return false;
-    }
-    if (document.orderForm.phone.value === "" || isNaN(document.orderForm.phone.value) || document.orderForm.phone.value.length !== 10) {
-        window.alert("Please provide a phone number.");
-        document.orderForm.phone.focus();
-        return false;
-    }
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(orderForm.email.value)) {
-        window.alert("Please provide an email.");
-        document.orderForm.email.focus();
-        return false;
-    }
 }
 
 //DOUGH SELECTION 
@@ -83,18 +41,18 @@ function changeDough(value) {
     }
 } */
 
-// BILLING & PAYMENT SECTION
+// DELIVERY INFO & BILLING/PAYMENT SECTION
 function validate() {
     "use strict";
     var isValid = true, orderForm = document.getElementById('orderForm');
-    if (orderForm.firstName.value === "") {
+    if (orderForm.firstName.value === "" || document.orderForm.firstName === (/^[A-Za-z]+$/)) {
         window.alert("Please provide your first name.");
         isValid = false;
     }
     if (orderForm.lastName.value === "") {
         window.alert("Please provide your last name.");
         isValid = false;
-    }
+    }8
     if (orderForm.addressType.value === "") {
         window.alert("Please select an address type.");
         isValid = false;
@@ -107,11 +65,11 @@ function validate() {
         window.alert("Please provide a city.");
         isValid = false;
     }
-    if (orderForm.state.value === "" || isNaN(document.orderForm.state.value)) {
+    if (orderForm.state.value === "" || document.orderForm.state.value.length !== 2) {
         window.alert("Please provide a state.");
         isValid = false;
     }
-    if (orderForm.zip.value === "" || document.orderForm.zip.value.length == 5) {
+    if (orderForm.zip.value === "" || document.orderForm.zip.value.length !== 5) {
         window.alert("Please provide a zip code.");
         isValid = false;
     }
@@ -119,15 +77,51 @@ function validate() {
         window.alert("Please provide a phone number. (no dashes)");
         isValid = false;
     }
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(orderForm.email.value)) {
+/*    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(orderForm.email.value)) {
         window.alert("Please provide an email. (you@example.com)");
         isValid = false;
-    }
+    }  */
     if (isValid) {        document.getElementById('paymentForm').style.display = 'block';
         return false;
                  }
 }
 
+function validateEmail() {
+    "use strict";
+    var emailID = document.myForm.EMail.value;
+    atpos = emailID.indexOf("@");
+    dotpos = emailID.lastIndexOf(".");
+    if (atpos < 1 || ( dotpos - atpos < 2 )) {
+        alert("Please enter correct email ID")
+        document.myForm.EMail.focus() ;
+        return false;
+    }
+        return( true );
+}
+
+//FINISHED
+function finished () {
+    "use strict";
+    
+}
+
+//BILLING 
+function clicked() {
+    "use strict";
+    if (confirm("Select OK if you're ready to submit your order.")) {   document.getElementById("billings").style.display="block";
+    } else {
+        alert("You selected cancel. Change your order.");
+        
+    }
+    }
+//OPEN FORM - NOT WORKING
+function myFunction() {
+    var x = document.getElementById("billing");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } 
+}
+        
 //CREDIT CARD LUHN FORMULA
 function lunhForm(num) {
     "use strict";
