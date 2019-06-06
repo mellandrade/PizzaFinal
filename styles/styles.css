@@ -36,12 +36,13 @@ label {
 
 
 /* Address Type Dropdown */
-.addressType, .size, .cheese, .sauce {
+.addressType {
     width: 175px!important;
     height: 38px;
 }
-
-#div1.typein {
+.size, .cheese, .sauce {
+    width: 125px!important;
+    height: 38px;
 }
 
 .dropdown {
@@ -82,6 +83,17 @@ label {
 }
 .mb-1 {
     color: black;
+}
+
+/* CART */
+.cart {
+    background-color: darkgoldenrod;
+}
+h5.mb-3.title {
+    margin: 10px 0 10px 20px;
+}
+.cartSection {
+    margin: 10px 20px;
 }
 
 /* PAYMENT */

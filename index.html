@@ -16,7 +16,6 @@
 <!--Javascript-->
    <script src="script.js"></script>  
 </head>
-
 <body>
  <div class="container">
   <div class="header clearfix"></div><br>
@@ -24,81 +23,25 @@
     <img src="images/pizzalogo_lg.png" id="logo" class="img-fluid" alt="Responsive image">
      <h1 class="display-4">Pizza World</h1>
       <p class="lead intro"><strong>Pizza makes the world go around. Order yours today!</strong></p>
-   </div>
-      
+   </div>    
 <!-- PART 1 DELIVERY INFO -->
  <div class="container"> 
   <div class="py-3 text-center">
    <h2>Order My Pizza</h2>
     <p class="lead">Fill out the information below.</p>
   </div>
-  
 <hr class="mb-4">
-
-<!-- SIDE CART - USE FOR TALLYING?
-  <div class="row">
-    <div class="col-md-4 order-md-2 mb-4">
-      <h4 class="d-flex justify-content-between align-items-center mb-3">
-        <span class="text-muted">Your cart</span>
-        <span class="badge badge-secondary badge-pill">3</span>
-      </h4>
-      <ul class="list-group mb-3">
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Product name</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$12</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Second product</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$8</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Third item</h6>
-            <small class="text-muted">Brief description</small>
-          </div>
-          <span class="text-muted">$5</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between bg-light">
-          <div class="text-success">
-            <h6 class="my-0">Promo code</h6>
-            <small>EXAMPLECODE</small>
-          </div>
-          <span class="text-success">-$5</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between">
-          <span>Total (USD)</span>
-          <strong>$20</strong>
-        </li>
-      </ul>
-
-      <form class="card p-2">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Promo code">
-          <div class="input-group-append">
-            <button type="submit" class="btn btn-secondary">Redeem</button>
-          </div>
-        </div>
-      </form>
-    </div>
-    -->
 <!-- DELIVERY INFO -->
   <div class="col-md-12 order-md-1">
-   <form id="orderForm" method="post" action="" name="orderForm">
+   <form id="infoForm" method="post" action="" name="infoForm">
      <div class="row content">
        <div class="col-md-6 mb-3">
-         <label for="firstName">First Name</label><input type="text" class="form-control" name="firstName" id="firstName" placeholder="Jane" value="">
+         <label for="firstName">First Name</label><input type="text" class="form-control" name="firstName" id="firstName1" placeholder="Jane" value="">
        </div>
        <div class="col-md-6 mb-3">
-         <label for="lastName">Last Name</label><input type="text" class="form-control" name="lastName" id="lastName" placeholder="Doe" value="">
+         <label for="lastName">Last Name</label><input type="text" class="form-control" name="lastName" id="lastName1" placeholder="Doe" value="">
        </div>
-     </div>
-             
+     </div>    
        <div class="mb-3">
          <div class="dropdown">
           <label for="addressType">Address Type:</label><br>
@@ -113,34 +56,31 @@
             </select>
          <div id="div1" class="typein"></div>
         </div>  
-       </div>
-            
+       </div> 
       <div class="row">
         <div class="col-md-6 mb-3"> 
            <label for="street">Street Address</label>
-           <input type="text" class="form-control" name="street" id="street" placeholder="1234 Main St" value="">
+           <input type="text" class="form-control" name="street" id="street1" placeholder="1234 Main St" value="">
         </div>
         <div class="col-md-6 mb-3"> 
            <label for="apt">Apt/Suite/Room <span class="text-muted">(optional)</span></label>
-           <input type="text" class="form-control" name="apt" id="apt" placeholder="Apt #3" value="">
+           <input type="text" class="form-control" name="apt" id="apt1" placeholder="Apt #3" value="">
         </div>
-      </div>  
-             
+      </div>    
       <div class="row">
         <div class="col-md-5 mb-3">
           <label for="city">City</label>
-          <input type="text" class="form-control" name="city" id="city" placeholder="" value="">
+          <input type="text" class="form-control" name="city1" id="city1" placeholder="" value="">
         </div>
         <div class="col-md-4 mb-3">
           <label for="state">State</label>
-          <input type="text" class="form-control" name="state" id="state" placeholder="" value="">
+          <input type="text" class="form-control" name="state" id="state1" placeholder="" value="">
         </div>
         <div class="col-md-3 mb-3">
           <label for="zip">Zip Code</label>
-          <input type="text" class="form-control" name="zip" id="zip" placeholder="" value="">
+          <input type="text" class="form-control" name="zip" id="zip1" placeholder="" value="">
         </div>
-       </div>
-             
+       </div>  
        <div class="row">
          <div class="col-md-6 mb-3">
            <label for="phone">Phone Number</label>
@@ -150,82 +90,74 @@
            <label for="email">Email</label>
            <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com">
          </div>
-       </div> 
+       </div>
+      </form> 
        
 <hr class="mb-4">
-     
+<!-- SIDE CART --> 
+<div class="col-md-3 order-md-2 mb-4 float-right cart">
+  <div class="row sideCart">
+       <h5 class="mb-3 title">Your Total</h5>
+       <div class="cartSection">
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <h6 class="my-0">Selected Cheese</h6>
+        <div id="cheesePrice"></div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <h6 class="my-0">Selected Sauce</h6>
+        <div id="saucePrice"></div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <h6 class="my-0">Added Toppings</h6>
+        <div id="toppingPrice"></div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+        <div id="totalOrder"></div>
+        </li>
+      </ul>
+      </div>
+    </div>
+</div>
+        
 <!-- PART 2 BUILD YOUR ORDER FORM -->
+ <form id="orderForm" method="post" action="" name="orderForm">
   <h5 class="mb-3">Build My Pizza</h5>
-   <div class="d-block my-2 doughGrp" name="doughGrp">
+   <div class="col-md-9 mb-2 doughGrp" name="doughGrp">
      <p>Select My Dough:</p>
-     
-<label class="dough" for="handtossed"><input type="radio" name="dough" id="handtossed" value="handtossed" />Hand-Tossed</label>
- 
-<label class="dough" for="thincrust"><input type="radio" name="dough" id="thincrust" value="thincrust" />Thin Crust</label>
-
-<label class="dough" for="nystyle"><input type="radio" name="dough" id="nystyle" value="nystyle" />New York Style</label>
- 
-<label class="dough" for="glutenfree"><input type="radio" name="dough" id="glutenfree" value="glutenfree" />Gluten Free</label> 
-
- <!--        
-     <select name="dough" id="dough" onChange="changeDough(this.value);">
-      <div class="custom-control custom-radio">
-      <input type="radio" name="dough" id="handtossed" value="handtossed" class="custom-control-input">
-      <label class="custom-control-label" for="handtossed">Hand-Tossed</label>
-        </div>
-      <div class="custom-control custom-radio">
-       <input type="radio" id="thincrust" name="dough" value="thincrust" class="custom-control-input">
-       <label class="custom-control-label" for="thincrust">Thin Crust</label>
-        </div>
-      <div class="custom-control custom-radio"> 
-        <input type="radio" id="nystyle" name="dough" value="nycstyle" class="custom-control-input">
-        <label class="custom-control-label" for="nystyle">New York Style</label>
-       </div>
-      <div class="custom-control custom-radio">
-        <input type="radio" id="glutenfree" name="dough" value="glutenfree" class="custom-control-input">
-        <label class="custom-control-label" for="glutenfree">Gluten Free</label>
-        </div>
-      </select>
-      
--->      
+        <label class="dough" for="handtossed"><input type="radio" name="dough" id="handtossed" value="handtossed" onchange="selectSize()" />Hand-Tossed</label> 
+        <label class="dough" for="thincrust"><input type="radio" name="dough" id="thincrust" value="thincrust" onchange="selectSize()" />Thin Crust</label>
+        <label class="dough" for="nystyle"><input type="radio" name="dough" id="nystyle" value="nystyle" onchange="selectSize()" />New York Style</label> 
+        <label class="dough" for="glutenfree"><input type="radio" name="dough" id="glutenfree" value="glutenfree" onchange="selectSize()" />Gluten Free</label>    
      </div>    
 <br>
-  <div class="col-md-12 order-md-1">
+  <div class="col-md-9 order-md-1">
    <div class="row">
- <div class="col-md-4 mb-3 sizeGrp" name="sizeGrp">
-    <p>Select My Size:</p>
-    <select name="size" id="size" class="form-control btn btn-primary dropdown-toggle dropbtn size" data-toggle="dropdown">
+     <div class="col-md-3 mb-2 sizeGrp" name="sizeGrp">
+    <p>Select Size:</p>
+    <select name="size" id="size" class="btn btn-primary dropdown-toggle dropbtn size" data-toggle="dropdown" onChange="calcTotal()">
     <option value="" disabled selected>Select...</option>
-    <option value="" id="htsmall">Hand-Tossed: Small - $9.99</option>
-    <option value="" id="htmed">Hand-Tossed: Medium - $12.99</option>
-    <option value="" id="htlarge">Hand-Tossed: Large - $14.99</option>
-    <option value="" id="thinmed">Thin Crust: Medium - $11.99</option>
-    <option value="" id="thinlarge">Thin Crust: Large - $13.99</option>
-    <option value="" id="nylarge">NY Style: Large - $16.99</option>
-    <option value="" id="nyxlarge">NY Style: Extra Large - $19.99</option>
-    <option value="" id="glutensmall">Gluten Free: Small - $10.99</option>
-   <!--
-    <div class="col-md-4 mb-3">
-    <p>Select My Size:</p>
-    <select name="size" id="size" class="btn btn-primary dropdown-toggle dropbtn size" data-toggle="dropdown">
-    <div id="myDropdown" class="dropdown-content">
-        <option id="htsmall">Hand-Tossed: Small - $9.99</option>
-        <option id="htmed">Hand-Tossed: Medium - $12.99</option>
-        <option id="htlarge">Hand-Tossed: Large - $14.99</option>
-        <option id="thinmed">Thin Crust: Medium - $11.99</option>
-        <option id="thinlarge">Thin Crust: Large - $13.99</option>
-        <option id="nylarge">NY Style: Large - $16.99</option>
-        <option id="nyxlarge">NY Style: Extra Large - $19.99</option>
-        <option id="glutensmall">Gluten Free: Small - $10.99</option>
-    </div>
-    </select>
-   </div> -->
-   
+   <div id="dropdownht">
+    <option value="HTSmall" id="">Hand-Tossed: Small - $9.99</option>
+    <option value="HTMedium" id="">Hand-Tossed: Medium - $12.99</option>
+    <option value="HTLarge" id="">Hand-Tossed: Large - $14.99</option>
+   </div>
+   <div id="dropdowntc">
+    <option value="TCMedium" id="">Thin Crust: Medium - $11.99</option>
+    <option value="TCLarge" id="">Thin Crust: Large - $13.99</option>
+   </div>
+   <div id="dropdownny">    
+    <option value="NYLarge" id="">NY Style: Large - $16.99</option>
+    <option value="NYXLarge" id="">NY Style: Extra Large - $19.99</option>
+   </div>
+   <div id="dropdowngf">
+    <option value="GFSmall" id="">Gluten Free: Small - $10.99</option>
+   </div>
    </select>
  </div>
-    <div class="col-md-4 mb-3">
-    <p>Select My Cheese:</p>
-    <select name="cheese" id="cheese" class="btn btn-primary dropdown-toggle dropbtn cheese" data-toggle="dropdown">
+    <div class="col-md-3 mb-2">
+    <p>Select Cheese:</p>
+    <select name="cheese" id="cheese" class="btn btn-primary dropdown-toggle dropbtn cheese" data-toggle="dropdown" onChange="calcTotal()">
        <div id="myDropdown" class="dropdown-content">
         <option id="light" value="light">Light: No charge</option>
         <option id="normal" value="normal" selected>Normal: No charge</option>
@@ -234,51 +166,52 @@
         </div>
     </select>
     </div>   
-
-    <div class="col-md-4 mb-3">
-    <p>Select My Sauce:</p>
- <select name="sauce" id="sauce" class="btn btn-primary dropdown-toggle dropbtn sauce" data-toggle="dropdown">
+    <div class="col-md-3 mb-2">
+    <p>Select Sauce:</p>
+ <select name="sauce" id="sauce" class="btn btn-primary dropdown-toggle dropbtn sauce" data-toggle="dropdown" onChange="calcTotal()">
       <div id="myDropdown" class="dropdown-content">
-        <option id="regular" selected>Regular Tomato: No charge</option>
-        <option id="hearty">Hearty Tomato: +$0.99</option>
-        <option id="bbq">BBQ Sauce: +$1.99</option>
+        <option id="regular" value="regular" selected>Regular Tomato: No charge</option>
+        <option id="hearty" value="hearty">Hearty Tomato: +$0.99</option>
+        <option id="bbq" value="bbq">BBQ Sauce: +$1.99</option>
         </div>
     </select>
        </div>
-       
-<div class="d-block my-3">
-    <p>Select My Toppings: <em>(Each topping is $0.99 extra.)</em></p>
+           </div>
+           <div class="row">
+<div class="col-md-9 mb-2">
+    <p>Select Toppings: <em>(Each topping is $0.99 extra.)</em></p>
     <div class="form-check form-check-inline"> 
-      <input type="checkbox" id="pepperoni" name="toppings" class="form-check-input" value="pepperoni">
+      <input type="checkbox" id="pepperoni" class="form-check-input" name="toppings" value="pepperoni" onChange="calcTotal()">
       <label for="pepperoni"> Pepperoni</label>
-      <input id="sausage" type="checkbox" class="form-check-input" name="toppings">
+      <input id="sausage" type="checkbox" class="form-check-input" name="toppings" value="sausage" onChange="calcTotal()">
       <label for="sausage"> Sausage</label>
-      <input id="ham" type="checkbox" class="form-check-input" name="toppings">
+      <input id="ham" type="checkbox" class="form-check-input" name="toppings" value="ham" onChange="calcTotal()">
       <label for="ham"> Ham</label>
-      <input id="bacon" type="checkbox" class="form-check-input" name="toppings" value="bacon">
+      <input id="bacon" type="checkbox" class="form-check-input" name="toppings" value="bacon" onChange="calcTotal()">
       <label for="bacon"> Bacon</label><br>
-      <input id="salami" type="checkbox" class="form-check-input" name="toppings" value="salami">
+      <input id="salami" type="checkbox" class="form-check-input" name="toppings" value="salami" onChange="calcTotal()">
       <label for="salami"> Salami</label>
+      <input id="peppers" type="checkbox" class="form-check-input" name="toppings" value="peppers" onChange="calcTotal()">
+      <label for="peppers"> Peppers</label>
     </div>
      <div class="form-check form-check-inline">
-      <input id="peppers" type="checkbox" class="form-check-input" name="toppings" value="peppers">
-      <label for="peppers"> Peppers</label>
-      <input id="olives" type="checkbox" class="form-check-input" name="toppings" value="olives">
+      <input id="olives" type="checkbox" class="form-check-input" name="toppings" value="olives" onChange="calcTotal()">
       <label for="olives"> Olives</label>
-      <input id="jalapenos" type="checkbox" class="form-check-input" name="toppings" value="jalapenos">
+      <input id="jalapenos" type="checkbox" class="form-check-input" name="toppings" value="jalapenos" onChange="calcTotal()">
       <label for="jalapenos"> Jalapenos</label>
-      <input id="mushrooms" type="checkbox" class="form-check-input" name="toppings" value="mushrooms">
+      <input id="mushrooms" type="checkbox" class="form-check-input" name="toppings" value="mushrooms" onChange="calcTotal()">
       <label for="mushrooms"> Mushrooms</label>
-      <input id="pineapple"type="checkbox" class="form-check-input" name="toppings" value="pineapple">
+      <input id="pineapple"type="checkbox" class="form-check-input" name="toppings" value="pineapple" onChange="calcTotal()">
       <label for="pineapple"> Pineapple</label>
-      <input id="onion" type="checkbox" class="form-check-input" name="toppings" value="onion">
+      <input id="onion" type="checkbox" class="form-check-input" name="toppings" value="onion" onChange="calcTotal()">
       <label for="onion"> Onion</label>
     </div>
        </div>
-   <div class="col text-center">   
-<button id="finished" class="btn btn-primary btn-md btn-success" onClick="multiFunc();">Finished Building Pizza</button>
+         </div>
+     <br>
+   <div class="col-md-9 mb-2 col text-center">   
+<button type="submit" id="finished" class="btn btn-primary btn-md btn-success" onClick="multiFunc();">Finished Building Pizza</button>
    </div>
-    </div>
      </div>
       </form>        
 
@@ -289,44 +222,44 @@
   <form id="paymentForm" method="post" action="" name="paymentForm">
    <h4 class="mb-3">Billing Information</h4>
    <div class="custom-control custom-checkbox">
-    <input type="checkbox" class="custom-control-input" id="same-address">
+    <input type="checkbox" class="custom-control-input" id="same-address" onChange="pullInfo()">
     <label class="custom-control-label" for="same-address">Same As Delivery Information</label>
    </div>
    
    <div class="row">
       <div class="col-md-6 mb-3">
          <label for="firstName">First Name</label>
-         <input type="text" class="form-control" id="firstName" placeholder="" value="">
+         <input type="text" class="form-control" id="firstName2" placeholder="" value="">
       </div>
       <div class="col-md-6 mb-3">
          <label for="lastName">Last Name</label>
-         <input type="text" class="form-control" id="lastName" placeholder="" value="">
+         <input type="text" class="form-control" id="lastName2" placeholder="" value="">
       </div>
    </div>
             
     <div class="row">
       <div class="col-md-6 mb-3">
         <label for="street">Street Address</label>
-        <input type="text" class="form-control" id="street" placeholder="1234 Main St" value="">
+        <input type="text" class="form-control" id="street2" placeholder="1234 Main St" value="">
       </div>
       <div class="col-md-6 mb-3">
         <label for="apt">Apt/Suite/Room <span class="text-muted">(optional)</span></label>
-        <input type="text" class="form-control" id="apt" placeholder="Apt #3" value="">
+        <input type="text" class="form-control" id="apt2" placeholder="Apt #3" value="">
       </div>
     </div>
        
     <div class="row">
       <div class="col-md-5 mb-3"> 
         <label for="city">City</label>
-        <input type="text" class="form-control" id="city" placeholder="La Jolla" value="">
+        <input type="text" class="form-control" id="city2" placeholder="La Jolla" value="">
       </div>
       <div class="col-md-4 mb-3">
         <label for="state">State</label>
-        <input type="text" class="form-control" id="state" placeholder="California" value="">
+        <input type="text" class="form-control" id="state2" placeholder="California" value="">
       </div>
       <div class="col-md-3 mb-3">
         <label for="zip">Zip</label>
-        <input type="text" class="form-control" id="zip" placeholder="92107">
+        <input type="text" class="form-control" id="zip2" placeholder="92107">
       </div>
     </div>
 
