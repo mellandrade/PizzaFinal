@@ -2,15 +2,20 @@
 function multiFunc() {
     "use strict";
     validate();
-    clicked ();
-    myFunction ();
-   
+    toggleClick();
+    myFunction();
 }
 
 //PART 1
+function myFunction() {
+    "use strict";
+    document.getElementById("infoForm").submit();
+    document.getElementById("orderForm").submit();
+    document.getElementById("paymentForm").submit();
+}
 
 //ADDRESS TYPE DROPDOWN FUNCTION
-function showfield(name) {
+function showField(name) {
     "use strict";
     if (name === "other") {
         document.getElementById("div1").innerHTML = 'Other <input type="text" name="other" placeholder="Explain" />';
@@ -21,13 +26,13 @@ function showfield(name) {
 // DELIVERY INFO & BILLING/PAYMENT SECTION - VALIDATION
 function validate() {
     "use strict";
-    var isValid = true, 
+    var isValid = true,
         infoForm = document.getElementById('infoForm'),
         orderForm = document.getElementById('orderForm'),
         e = document.getElementById('email').value,
         atpos = e.indexOf('@'),
-        dotpos = e.lastIndexOf('.');
-     //  letters = /^[A-Za-z]+$/
+        dotpos = e.lastIndexOf('.'),
+        numeric = /^[0-9]+$/;
     if (infoForm.firstName1.value === "") {
         window.alert("Please provide your first name.");
         isValid = false;
@@ -48,19 +53,19 @@ function validate() {
         window.alert("Please provide a city.");
         isValid = false;
     }
-    if (infoForm.state1.value === "" || document.orderForm.state.value.length !== 2) {
+    if (infoForm.state1.value === "" || document.infoForm.state.value.length !== 2) {
         window.alert("Please provide a state.");
         isValid = false;
     }
-    if (infoForm.zip1.value === "" || document.orderForm.zip.value.length !== 5) {
+    if (infoForm.zip1.value === "" || document.infoForm.zip.value.length !== 5) {
         window.alert("Please provide a zip code.");
         isValid = false;
     }
-    if (infoForm.phone.value === "" || isNaN(document.orderForm.phone.value) || document.orderForm.phone.value.length !== 10) {
+    if (infoForm.phone.value === "" || isNaN(document.infoForm.phone.value) || document.infoForm.phone.value.length !== 10) {
         window.alert("Please provide a phone number. (no dashes)");
         isValid = false;
     }
-    if (infoForm.email.value === "" && atpos<1 || dotpos<atpos+2 || dotpos+2>=e.length) {
+    if (infoForm.email.value === "" && atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= e.length) {
         window.alert("Please provide an email. (you@example.com)");
         isValid = false;
     }
@@ -75,7 +80,7 @@ function validate() {
     //show billing information code here document.open?
     if (isValid) {        document.getElementById('paymentForm').style.display = 'block';
         return false;
-    }
+                 }
 }
 
 //DOUGH SELECTION
@@ -105,65 +110,65 @@ function changeDough(value) {
 } */
 
 // CALCULATIONS
-var sizePrices = new Array();
-sizePrices["HTSmall"]= 9.99;
-sizePrices["HTMedium"]= 12.99;
-sizePrices["HTLarge"]= 14.99;
-sizePrices["TCMedium"]= 11.99;
-sizePrices["TCLarge"]= 13.99;
-sizePrices["NYLarge"]= 16.99;
-sizePrices["NYXLarge"]= 19.99;
-sizePrices["GFSmall"]= 10.99;
+var sizePrices = {
+    "HTSmall": 9.99,
+    "HTMedium": 12.99,
+    "HTLarge": 14.99,
+    "TCMedium": 11.99,
+    "TCLarge": 13.99,
+    "NYLarge": 16.99,
+    "NYXLarge": 19.99,
+    "GFSmall": 10.99
+};
 
 function getSizePrice() {
-    var totalSizePrice = 0;
-    var orderTally = document.getElementById("cart");
-    var selectedSize = orderTally.elements["size"];
+    "use strict";
+    var totalSizePrice, orderTally = document.getElementById("cart"), selectedSize = orderTally.elements["size"];
     totalSizePrice = sizePrices[selectedSize.value];
     return totalSizePrice;
 }
 
-var cheesePrices = new Array();
-cheesePrices["light"]= 0;
-cheesePrices["normal"]= 0;
-cheesePrices["extra"]= 2.99;
-cheesePrices["double"]= 3.99;
+var cheesePrices = {
+    "light": 0,
+    "normal": 0,
+    "extra": 2.99,
+    "double": 3.99
+};
 
 function getCheesePrice() {
-    var totalCheesePrice = 0;
-    var orderTally = document.getElementById("cart");
-    var selectedCheese = orderTally.elements["cheese"];
+    "use strict";
+    var totalCheesePrice, orderTally = document.getElementById("cart"), selectedCheese = orderTally.elements["cheese"];
     totalCheesePrice = cheesePrices[selectedCheese.value];
     return totalCheesePrice;
-    window.document.getElementById("cheesePrice").innerHTML = "$" + totalCheesePrice;
+    document.getElementById("cheesePrice").innerHTML = "$" + totalCheesePrice;
 }
 
-var saucePrices = new Array();
-saucePrices["regular"]= 0;
-saucePrices["hearty"]= 0.99;
-saucePrices["bbq"]= 1.99;
+var saucePrices = {
+    "regular": 0,
+    "hearty": 0.99,
+    "bbq": 1.99
+};
 
 function getSaucePrice() {
-    var totalSaucePrice = 0;
-    var orderTally = document.getElementById("cart");
-    var selectedSauce = orderTally.elements["sauce"];
+    "use strict";
+    var totalSaucePrice, orderTally = document.getElementById("cart"), selectedSauce = orderTally.elements["sauce"];
     totalSaucePrice = saucePrices[selectedSauce.value];
     return totalSaucePrice;
     window.document.getElementById("saucePrice").innerHTML = "$" + totalSaucePrice;
 }
 
 function toppingsPrice() {
-    var toppingPrice = 0;
-    var orderTally = document.getElementById("cart");
-    var addToppings = orderTally.elements["toppings"];
+    "use strict";
+    var toppingPrice, orderTally = document.getElementById("cart"), addToppings = orderTally.elements["toppings"];
     if (addToppings.checked === true) {
         toppingPrice = 0.99;
     }
     return toppingPrice;
-    window.document.getElementById("toppingPrice").innerHTML = "$" + toppingPrice;    
+    window.document.getElementById("toppingPrice").innerHTML = "$" + toppingPrice;
 }
 
-function tallyTotal() {
+function calcTotal() {
+    "use strict";
     var orderTotal = getSizePrice() + getCheesePrice() + getSaucePrice() + toppingsPrice();
     window.document.getElementById("totalOrder").innerHTML = "Total $" + orderTotal;
 }
@@ -189,21 +194,53 @@ function pullInfo() {
         document.getElementById("zip2").value = "";
     }
 }
+
+function validate() {
+    "use strict";
+    var isValid = true,
+        paymentForm = document.getElementById('paymentForm');
+    if (paymentForm.firstName2.value === "") {
+        window.alert("Please provide your first name.");
+        isValid = false;
+    }
+    if (paymentForm.lastName2.value === "") {
+        window.alert("Please provide your last name.");
+        isValid = false;
+    }
+    if (paymentForm.street2.value === "") {
+        window.alert("Please provide a street address.");
+        isValid = false;
+    }
+    if (paymentForm.city2.value === "") {
+        window.alert("Please provide a city.");
+        isValid = false;
+    }
+    if (paymentForm.state2.value === "" || document.paymentForm.state.value.length !== 2) {
+        window.alert("Please provide a state.");
+        isValid = false;
+    }
+    if (paymentForm.zip2.value === "" || document.paymentForm.zip.value.length !== 5) {
+        window.alert("Please provide a zip code.");
+        isValid = false;
+    }
+}
+
 //OPEN FORM - NOT WORKING
 function myFunction() {
+    "use strict";
     var x = document.getElementById("billing");
     if (x.style.display === "none") {
         x.style.display = "block";
-    } 
+    }
 }
 
 //FINISHED BUTTON - NEED TO ADD FORM OPENING FOR BILLING 
-function clicked() {
+function toggleClick() {
     "use strict";
-    if (confirm("Select OK if you're ready to submit your order.")) {   window.document.getElementById("billings").style.display="block";
-    } else {
-        window.document("You selected Cancel. Please make edits to your order."); 
-    }
+    window.document.getElementById("paymentForm").style.display = "none";
+    if (confirm("Select OK if you're ready to submit your order.")) {   window.document.getElementById("paymentForm").style.display = "block";
+            } else {window.document("You selected Cancel. Please make edits to your order.");
+                   }
 }
 
         
@@ -218,7 +255,9 @@ function lunhForm(num) {
                 sum += (curDigit * 2) - 9;
             } else { sum += curDigit * 2;
                    }
-        } else {sum += curDigit;}
-        var doubleUp =!doubleUp;
-    }   return (sum % 10) == 0 ? true : false; 
+        } else {sum += curDigit;
+               }
+        var doubleUp = !doubleUp;
+    }
+    return (sum % 10) === 0 ? true : false;
 }

@@ -33,19 +33,19 @@
 <hr class="mb-4">
 <!-- DELIVERY INFO -->
   <div class="col-md-12 order-md-1">
-   <form id="infoForm" method="post" action="" name="infoForm">
+   <form id="infoForm" method="post" action="/action_page.php" name="infoForm">
      <div class="row content">
        <div class="col-md-6 mb-3">
-         <label for="firstName">First Name</label><input type="text" class="form-control" name="firstName" id="firstName1" placeholder="Jane" value="">
+         <label for="firstName1">First Name</label><input type="text" class="form-control" name="firstName1" id="firstName1" placeholder="Jane" value="">
        </div>
        <div class="col-md-6 mb-3">
-         <label for="lastName">Last Name</label><input type="text" class="form-control" name="lastName" id="lastName1" placeholder="Doe" value="">
+         <label for="lastName1">Last Name</label><input type="text" class="form-control" name="lastName1" id="lastName1" placeholder="Doe" value="">
        </div>
      </div>    
        <div class="mb-3">
          <div class="dropdown">
           <label for="addressType">Address Type:</label><br>
-           <select name="addressType" id="addressType" class="btn btn-primary dropdown-toggle dropbtn addressType" data-toggle="dropdown" onchange="showfield(this.options[this.selectedIndex].value)">
+           <select name="addressType" id="addressType" class="btn btn-primary dropdown-toggle dropbtn addressType" data-toggle="dropdown" onchange="showField(this.options[this.selectedIndex].value)">
              <option value="" disabled selected>Select...</option>
              <option value="house">House</option>
              <option value="apt">Apartment</option>
@@ -69,16 +69,16 @@
       </div>    
       <div class="row">
         <div class="col-md-5 mb-3">
-          <label for="city">City</label>
+          <label for="city1">City</label>
           <input type="text" class="form-control" name="city1" id="city1" placeholder="" value="">
         </div>
         <div class="col-md-4 mb-3">
-          <label for="state">State</label>
-          <input type="text" class="form-control" name="state" id="state1" placeholder="" value="">
+          <label for="state1">State</label>
+          <input type="text" class="form-control" name="state1" id="state1" placeholder="" value="">
         </div>
         <div class="col-md-3 mb-3">
-          <label for="zip">Zip Code</label>
-          <input type="text" class="form-control" name="zip" id="zip1" placeholder="" value="">
+          <label for="zip1">Zip Code</label>
+          <input type="number" class="form-control" name="zip1" id="zip1" placeholder="" value="">
         </div>
        </div>  
        <div class="row">
@@ -135,7 +135,7 @@
    <div class="row">
      <div class="col-md-3 mb-2 sizeGrp" name="sizeGrp">
     <p>Select Size:</p>
-    <select name="size" id="size" class="btn btn-primary dropdown-toggle dropbtn size" data-toggle="dropdown" onChange="calcTotal()">
+    <select name="size" id="size" class="btn btn-primary dropdown-toggle dropbtn size" data-toggle="dropdown" onchange="calcTotal()">
     <option value="" disabled selected>Select...</option>
    <div id="dropdownht">
     <option value="HTSmall" id="">Hand-Tossed: Small - $9.99</option>
@@ -157,7 +157,7 @@
  </div>
     <div class="col-md-3 mb-2">
     <p>Select Cheese:</p>
-    <select name="cheese" id="cheese" class="btn btn-primary dropdown-toggle dropbtn cheese" data-toggle="dropdown" onChange="calcTotal()">
+    <select name="cheese" id="cheese" class="btn btn-primary dropdown-toggle dropbtn cheese" data-toggle="dropdown" onchange="calcTotal()">
        <div id="myDropdown" class="dropdown-content">
         <option id="light" value="light">Light: No charge</option>
         <option id="normal" value="normal" selected>Normal: No charge</option>
@@ -168,7 +168,7 @@
     </div>   
     <div class="col-md-3 mb-2">
     <p>Select Sauce:</p>
- <select name="sauce" id="sauce" class="btn btn-primary dropdown-toggle dropbtn sauce" data-toggle="dropdown" onChange="calcTotal()">
+ <select name="sauce" id="sauce" class="btn btn-primary dropdown-toggle dropbtn sauce" data-toggle="dropdown" onchange="calcTotal()">
       <div id="myDropdown" class="dropdown-content">
         <option id="regular" value="regular" selected>Regular Tomato: No charge</option>
         <option id="hearty" value="hearty">Hearty Tomato: +$0.99</option>
@@ -209,7 +209,7 @@
        </div>
          </div>
      <br>
-   <div class="col-md-9 mb-2 col text-center">   
+   <div class="col-md-9 mb-2 col text-center"> 
 <button type="submit" id="finished" class="btn btn-primary btn-md btn-success" onClick="multiFunc();">Finished Building Pizza</button>
    </div>
      </div>
@@ -259,7 +259,7 @@
       </div>
       <div class="col-md-3 mb-3">
         <label for="zip">Zip</label>
-        <input type="text" class="form-control" id="zip2" placeholder="92107">
+        <input type="number" class="form-control" id="zip2" placeholder="92107">
       </div>
     </div>
 
@@ -268,10 +268,10 @@
 <!-- PAYMENT -->         
 <h5 class="mb-3">Payment</h5>
     <div class="icon-container">
-        <i class="fa fa-cc-visa" style="color:navy;"></i>
-        <i class="fa fa-cc-amex" style="color:blue;"></i>
-        <i class="fa fa-cc-mastercard" style="color:red;"></i>
-        <i class="fa fa-cc-discover" style="color:orange;"></i>
+        <i class="fa fa-cc-visa fa-2x" style="color:navy;"></i>
+        <i class="fa fa-cc-amex fa-2x" style="color:blue;"></i>
+        <i class="fa fa-cc-mastercard fa-2x" style="color:red;"></i>
+        <i class="fa fa-cc-discover fa-2x" style="color:orange;"></i>
     </div>
     <div class="row">
         <div class="col-md-6 mb-3">
@@ -325,13 +325,13 @@
         <input type="text" id="cvv" class="form-control" name="cvv" placeholder="352">
      </div>
    </div>     
-  </form>
 <br> 
     <div class="row"> 
        <div class="col text-center">   
-        <button class="btn btn-primary btn-md btn-success" id="submit" type="submit">Place Order</button>
+        <button class="btn btn-primary btn-md btn-success" id="submit" type="submit" onClick="myFunction()">Place Order</button>
         </div>
     </div>
+      </form>
  </div> 
 <hr class="mb-4">
   <footer class="my-2 pt-2 text-center text-small">
