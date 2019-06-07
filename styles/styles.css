@@ -34,8 +34,7 @@ label {
     margin: 10px;
 }
 
-
-/* Address Type Dropdown */
+/* ADDRESS TYPE */
 .addressType {
     width: 175px!important;
     height: 38px;
@@ -60,15 +59,21 @@ label {
   z-index: 1;
 }
 
-.dropdown-content a {color: black; padding: 12px 16px; text-decoration: none; display: block;}
-.dropdown a:hover {background-color: #ddd;}
-.show {display: block;}
+.dropdown-content a {
+    color: black; padding: 12px 16px; text-decoration: none; display: block;
+}
+.dropdown a:hover {
+    background-color: #ddd;
+}
+.show {
+    display: block;
+}
 
 /* FORM */
 .dough {
     margin: 0px 20px 0px 0px;
 }
-#handtossed, #thincrust, #nystyle, #glutenfree {
+#handTossed, #thinCrust, #nyStyle, #glutenFree {
     margin-right: 5px;
 }
 .dropbtn {
@@ -79,7 +84,6 @@ label {
     background-color: darkgoldenrod!important;
     border-color: white!important;
     margin-bottom: 20px;
-
 }
 .mb-1 {
     color: black;
@@ -97,8 +101,6 @@ h5.mb-3.title {
 }
 
 /* PAYMENT */
-//.billing {display: none;}
-
 .fa {
     width: 40px;
     height: 40px;

@@ -84,30 +84,48 @@ function validate() {
 }
 
 //DOUGH SELECTION
-/*function selectSize() {
-    var s = document.getElementById("selectDough").value;
-    if ()
-}
-
-var selectDough = {
-    handtossed: ["Small: $9.99", "Medium: $12.99", "Large: $14.99"],
-    thincrust: ["Medium: $11.99", "Large: $13.99"],
-    nystyle: ["Large: $16.99", "X-Large: $19.99"],
-    glutenfree: ["Small: $10.99"]
-};
-function changeDough(value) {
-    "use strict";
-    if (value.length === 0) {
-        document.getElementsByClassId("size").innerHTML = "<option></option>";
-        else {
-        var doughOptions = "";
-        for (sizeId in selectDough[value]) {
-            doughOptions += "<option>" + selectDough[value][sizeId] + "</option>";
-        }
-        document.getElementById("size").innerHTML = doughOptions;
-        }
+$(document).ready(function () {
+    var selectDough = document.getElementById("doughGrp");
+    
+    selectDough.options[0] = new Option("Select...", "");
+    selectDough.options[1] = new Option("handTossed", "handTossed");
+    selectDough.options[2] = new Option("thinCrust", "thinCrust");
+    selectDough.options[3] = new Option("nyStyle", "nyStyle");
+    selectDough.options[4] = new Option("glutenFree", "glutenFree");
+    
+function selectSize() {
+    var handTossed = document.getElementById("dropdownht");
+    var thinCrust = document.getElementById("dropdowntc");
+    var nyStyle = document.getElementById("dropdownny");
+    var glutenFree = document.getElementById("dropdowngf");
+    var selectedDough = selectDough.options[selectedDough.selectedIndex].value;
+    
+    if (selectedDough === "handTossed") {
+        handTossed.options.length = 0;
+        handTossed.options[0] = new Option("Select...", "");
+        handTossed.options[1] = new Option("Small: $9.99", "Small: $9.99");
+        handTossed.options[2] = new Option("Medium: $12.99", "Medium: $12.99");
+        handTossed.options[3] = new Option("Large: $14.99", "Large: $14.99");
     }
-} */
+    if (selectedDough === "thinCrust") {
+        thinCrust.options.length = 0;
+        thinCrust.options[0] = new Option("Select...", "");
+        thinCrust.options[1] = new Option("Medium: $11.99", "Medium: $11.99");
+        thinCrust.options[2] = new Option("Large: $13.99", "Large: $13.99");
+    }
+    if (selectedDough === "nyStyle") {
+        nyStyle.options.length = 0;
+        nyStyle.options[0] = new Option("Select...", "");
+        nyStyle.options[1] = new Option("Large: $16.99", "Large: $16.99");
+        nyStyle.options[2] = new Option("X-Large: $19.99", "X-Large: $19.99");
+    }
+    if (selectedDough === "glutenFree") {
+        glutenFree.options.length = 0;
+        glutenFree.options[0] = new Option("Select...", "");
+        glutenFree.options[1] = new Option("Small: $10.99", "Small: $10.99");
+    }
+}        
+})
 
 // CALCULATIONS
 var sizePrices = {
